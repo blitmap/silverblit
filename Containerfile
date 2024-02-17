@@ -2,10 +2,10 @@ FROM quay.io/fedora-ostree-desktops/silverblue:39
 
 # Delete some silly repos
 
-RUN rm /etc/yum.repos.d/fedora-cisco-openh264.repo && \
-    rm /etc/yum.repos.d/google-chrome.repo && \
-    rm /etc/yum.repos.d/rpmfusion-nonfree-nvidia-driver.repo && \
-    rm /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
+#RUN rm /etc/yum.repos.d/fedora-cisco-openh264.repo && \
+#    rm /etc/yum.repos.d/google-chrome.repo && \
+#    rm /etc/yum.repos.d/rpmfusion-nonfree-nvidia-driver.repo && \
+#    rm /etc/yum.repos.d/rpmfusion-nonfree-steam.repo
 
 # Copy some configs from ublue
 
