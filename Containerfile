@@ -23,17 +23,17 @@ RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-
 
 COPY removals .
 
-RUN cat removals | xargs rpm-ostree override remove && \
-    ostree container commit && \
-    rm removals
+RUN xargs -a removals rpm-ostree override remove \
+    && ostree container commit \
+    && rm removals
 
 # Layer some packages
 
 COPY layers .
 
-RUN cat layers | xargs rpm-ostree install -y && \
-    ostree container commit && \
-    rm layers
+RUN xargs -a layers rpm-ostree install -y \
+    && ostree container commit \
+    && rm layers
 
 # Remove RPM fusion
 
