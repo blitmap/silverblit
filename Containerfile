@@ -9,8 +9,10 @@ FROM quay.io/fedora-ostree-desktops/silverblue:39
 
 # Copy some configs from ublue
 
-COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os-udev-rules /
-COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os-update-services /
+#COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os-udev-rules /
+#COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os-update-services /
+# add various udev rules and configs for systemd to periodically update
+COPY --from=ghcr.io/ublue-os/config:latest /files /
 
 # Setup RPM fusion
 
